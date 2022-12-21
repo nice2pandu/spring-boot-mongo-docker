@@ -1,13 +1,3 @@
-FROM openjdk:8-alpine
-
-# Required for starting application up.
-RUN apk update && apk add /bin/sh
-
-RUN mkdir -p /opt/app
-ENV PROJECT_HOME /opt/app
-
-COPY target/spring-boot-mongo-1.0.jar $PROJECT_HOME/spring-boot-mongo.jar
-
-WORKDIR $PROJECT_HOME
-
-CMD ["java" ,"-jar","./spring-boot-mongo.jar"]
+FROM tomcat:8.0.20-jre8
+# Dummy text to test 
+COPY target/myweb*.war /usr/local/tomcat/webapps/myweb.war
