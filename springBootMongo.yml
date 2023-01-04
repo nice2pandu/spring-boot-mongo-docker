@@ -19,18 +19,3 @@ spec:
         image: kammana/myweb:"$(version)"
         ports:
         - containerPort: 8080
- ---
- #newservive
-kind: Service
-apiVersion: v1
-metadata:
-  name: myweb
-spec:
-  selector:
-    app: myweb
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8080
-    nodePort: 31000
-  type: NodePort
