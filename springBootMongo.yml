@@ -19,6 +19,8 @@ spec:
         image: kammana/myweb:"$(version)"
         ports:
         - containerPort: 8080
+ ---
+ #newservive
 kind: Service
 apiVersion: v1
 metadata:
